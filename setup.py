@@ -6,7 +6,7 @@ import setuptools
 try:
     import numpy as np
 except ImportError:
-    subprocess.call([sys.executable, '-m', 'pip', 'install', 'numpy>=1.17'])
+    subprocess.call([sys.executable, '-m', 'pip', 'install', 'numpy>=2'])
     import numpy as np
     
 try:
