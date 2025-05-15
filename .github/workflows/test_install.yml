@@ -26,4 +26,5 @@ jobs:
 
     - name: Run Install
       run: |     
+        git submodule update --init --recursive -q
         pip install .

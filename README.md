@@ -2,6 +2,8 @@
 
 [![Test libs_qrem Install](https://github.com/PhaseCraft/libs_qrem/actions/workflows/test_install.yml/badge.svg)](https://github.com/PhaseCraft/libs_qrem/actions/workflows/test_install.yml)
 
+This is the Phasecraft fork of the following package, updating the install:
+
 `libs_qrem` is a python package which executes efficient quantum readout error mitigation (QREM) written in C++/Cython.
 This package mitigates the readout errors in 65 qubit measurement result of GHZ state from ibmq_brooklyn in few seconds.
 - Time Complexity: $O(ns^2)$
@@ -15,17 +17,17 @@ This package mitigates the readout errors in 65 qubit measurement result of GHZ 
 
 ## Install via pip
 ```sh
-pip install git+https://github.com/BOBO1997/libs_qrem
+pip install git+ssh://git@github.com/PhaseCraft/libs_qrem.git
 ```
 
 c.f.) Reinstall via pip
 ```sh
-pip install --upgrade --force-reinstall git+https://github.com/BOBO1997/libs_qrem
+pip install --upgrade --force-reinstall git+ssh://git@github.com/PhaseCraft/libs_qrem.git
 ```
 
 ## Install manually
 ```sh
-git clone https://github.com/BOBO1997/libs_qrem.git
+git clone https://github.com/Phasecraft/libs_qrem.git
 cd libs_qrem
 python setup.py install --record install_record.txt
 ```
