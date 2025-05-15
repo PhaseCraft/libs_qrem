@@ -1,5 +1,7 @@
 # Efficient Quantum Readout Error Mitigation for Sparse Measurement Outcomes of Near-term Quantum Devices
 
+[![Test libs_qrem Install](https://github.com/PhaseCraft/libs_qrem/actions/workflows/test_install.yml/badge.svg)](https://github.com/PhaseCraft/libs_qrem/actions/workflows/test_install.yml)
+
 `libs_qrem` is a python package which executes efficient quantum readout error mitigation (QREM) written in C++/Cython.
 This package mitigates the readout errors in 65 qubit measurement result of GHZ state from ibmq_brooklyn in few seconds.
 - Time Complexity: $O(ns^2)$
