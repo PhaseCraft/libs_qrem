@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "numpy>2", "cython>=0.29", "setuptools-scm>=8", "setuptools-git-versioning>=2.0,<3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+    name = "libs_qrem"
+    description="Efficient Quantum Readout Error Mitigation for Sparse Measurement Outcomes of Near-term Quantum Devices"
+    requires-python = ">3.10"
+    readme = "README.md"
+
+    dynamic = ["version"]
+
+    authors = [
+        {name = "Bo Yang", email="yh198595@gmail.com"},
+        {name = "Dongjia Zhang", email="tokazerkje@outlook.jp"}
+    ]
+
+[project.urls]
+    "Source" = "https://github.com/PhaseCraft/libs_qrem"
+
+[tool.setuptools-git-versioning]
+    enabled = true
+    dev_template = "{tag}+git.{sha}"
+    dirty_template = "{tag}+git.{sha}.dirty"

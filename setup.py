@@ -1,24 +1,7 @@
-import os
-import sys
-import subprocess
-import setuptools
-
-try:
-    import numpy as np
-except ImportError:
-    subprocess.call([sys.executable, '-m', 'pip', 'install', 'numpy>=2'])
-    import numpy as np
-    
-try:
-    from Cython.Build import cythonize
-except ImportError:
-    subprocess.call([sys.executable, '-m', 'pip', 'install', 'cython>=0.29'])
-    from Cython.Build import cythonize
-
-from setuptools import setup, Extension, find_packages
+import numpy as np
 from Cython.Build import cythonize
+from setuptools import setup, Extension
 from Cython.Distutils import build_ext
-from distutils.core import setup
 
 ext_modules = [
     Extension(
@@ -38,21 +21,18 @@ ext_modules = [
             "./cpp/nation_etal_filter.cpp",
         ],
         extra_compile_args=["-std=c++17", "-pthread"],
-		include_dirs=["./eigen"],
-        language="c++"
+        include_dirs=["./eigen"],
+        language="c++",
     ),
 ]
 
 setup(
     name="libs_qrem",
-    version="0.1.6",
     description="efficient quantum readout error mitigation library",
     cmdclass={"build_ext": build_ext},
     ext_modules=cythonize(ext_modules, language_level=3),
     include_dirs=[np.get_include()],
     zip_safe=False,
     packages=["libs_qrem"],
-    package_dir={
-        "libs_qrem": "libs_qrem"
-    },
+    package_dir={"libs_qrem": "libs_qrem"},
 )
